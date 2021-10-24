@@ -22,7 +22,10 @@ Ext.define('CustomApp', {
                     });
 
                     console.log('my Grid', myGrid);
-                }
+                    this.add(myGrid);
+                    console.log('my What is this', this);
+                },
+                scope: this 
             },
             fetch: ['FormattedID','Name', 'ScheduleState']
         });
