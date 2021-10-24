@@ -16,7 +16,8 @@ Ext.define('CustomApp', {
                         columnCfgs: [
                             'FormattedID',
                             'Name',
-                            'Owner'
+                            'Owner',
+                            'ScheduleState'
                         ]
 
                     });
@@ -27,7 +28,7 @@ Ext.define('CustomApp', {
                 },
                 scope: this 
             },
-            fetch: ['FormattedID','Name', 'ScheduleState']
+            fetch: ['FormattedID','Name', 'Owner' ,'ScheduleState']
         });
     }
 });
