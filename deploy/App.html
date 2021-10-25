@@ -7,7 +7,16 @@
 
     <script type="text/javascript">
         Rally.onReady(function () {
-                Ext.define("CustomApp",{extend:"Rally.app.App",componentCls:"app",launch:function(){console.log("Hola cara de Bola"),this._loadData()},_loadData:function(){Ext.create("Rally.data.wsapi.Store",{model:"User Story",autoLoad:!0,listeners:{load:function(a,o,t){console.log("ya estamos cargado datos....",a,o,t),this._loadGrid(a)},scope:this},fetch:["FormattedID","Name","Owner","ScheduleState"]})},_loadGrid:function(a){var o=Ext.create("Rally.ui.grid.Grid",{store:a,columnCfgs:["FormattedID","Name","Owner","ScheduleState"]});console.log("my Grid",o),this.add(o),console.log("my What is this",this)}});
+                Ext.define("CustomApp",{extend:"Rally.app.App",componentCls:"app",launch:function(){console.log("Hola cara de Bola"),
+                this._loadData()},
+                _loadData:function(){Ext.create("Rally.data.wsapi.Store",
+                {model:"User Story",autoLoad:!0,
+                listeners:{load:function(a,o,t){console.log("ya estamos cargado datos....",a,o,t),
+                this._loadGrid(a)},scope:this},
+                fetch:["FormattedID","Name","Owner","ScheduleState"]})},
+                _loadGrid:function(a){var o=Ext.create("Rally.ui.grid.Grid",{store:a,columnCfgs:["FormattedID","Name","Owner","ScheduleState"]});
+                console.log("my Grid",o),
+                this.add(o),console.log("my What is this",this)}});
 
             Rally.launchApp('CustomApp', {
                 name:"BasicRallyGird",
